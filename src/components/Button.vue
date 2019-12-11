@@ -1,18 +1,37 @@
 <template>
-    <button class="btn">
+    <button class="btn" @click="$emit('click', $event)">
         <slot>Button</slot>
     </button>
 </template>
 
 <script>
 export default {
-
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    @import 'src/assets/sass/main.scss';
+
     .btn {
-        color: white;
-        background: #09cdda;
+            
+        border-radius:5px;
+        border: none;
+        outline:none;
+        cursor:pointer;
+        font-size: $large;
+        padding:6px 18px;
+        margin: 6px;
+        color: $light-text-color;
+        background: $primary;
+
+        &:hover {
+            background: $primary-dark;
+        }
+
+        &:active {
+            position:relative;
+            top:1px;
+        }
     }
+
 </style>
