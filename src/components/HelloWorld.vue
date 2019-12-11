@@ -1,7 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <FVButton> Click </FVButton>
+    <FVButton @click="handleClick">Click</FVButton>
+    <FVButton @click="handleCloseButtonClick">Close</FVButton>
   </div>
 </template>
 
@@ -10,6 +11,21 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      theEvent: ""
+    }
+  },
+  methods: {
+    handleClick(event) {
+      console.log(event.target.textContent);
+      this.theEvent = event;
+    },
+
+    handleCloseButtonClick(event) {
+      console.log("close event: ", event.target.textContent);
+    }
   }
 }
 </script>
