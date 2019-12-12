@@ -1,31 +1,36 @@
 <template>
-  <div class="panel" :class="{collapsible: isCollapsible}">
-      <div class="panel-head">
-        <span class="panel-label"><slot name="head"/></span>
-        <span v-if="isCollapsible">
-            <i v-if="!isCollapsed" class="toggle-collapse fas fa-sort-up fa-2x"></i>
-            <i v-else class="toggle-collapse fas fa-sort-down fa-2x"></i>
-        </span>
-      </div>
-      <div class="panel-body">
-        <slot/>
-      </div>
-      <div class="panel-foot">
-        <slot name="foot"/>
-      </div>
-  </div>
+    <div class="panel" :class="{collapsible: isCollapsible}">
+        <div class="panel-head">
+            <span class="panel-label"><slot name="head"/></span>
+            <span v-if="isCollapsible" class="toggle-collapse" @click="handleClick">
+                <!-- TODO: Fix bug where click doesn't toggle icon, event though boolean variable in data is toggled. -->
+                <i v-show="isCollapsed" class="fas fa-sort-up fa-2x"></i>
+                <i v-show="!isCollapsed" class="fas fa-sort-down fa-2x"></i>
+            </span>
+        </div>
+        <div class="panel-body">
+            <slot />
+        </div>
+        <div class="panel-foot">
+            <slot name="foot"/>
+        </div>
+    </div>
 </template>
 
 <script>
 export default {
     name: 'FVPanel',
     props: {
-        isCollapsible: Boolean,
-        open: Boolean
+        isCollapsible: Boolean
     },
-    data () {
+    data() {
         return {
             isCollapsed: false
+        }
+    },
+    methods: {
+        handleClick() {
+            this.isCollapsed = !this.isCollapsed;
         }
     }
 }
@@ -49,7 +54,8 @@ export default {
             
             .toggle-collapse {
                 float: right;
-            }
+                cursor: pointer;
+            } 
         }
 
         .panel-body {
@@ -60,7 +66,7 @@ export default {
         }
 
         .panel-foot {
-            background: $gray-2;
+            background: $gray-1;
             text-align: right;
         }
     }
