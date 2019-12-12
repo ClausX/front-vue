@@ -1,13 +1,10 @@
 <template>
     <button class="btn" @click="$emit('click', $event)">
+        <slot name="left"/>
         <slot>Button</slot>
+        <slot name="right"/>
     </button>
 </template>
-
-<script>
-export default {
-}
-</script>
 
 <style lang="scss" scoped>
     @import 'src/assets/sass/main.scss';

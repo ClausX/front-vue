@@ -2,7 +2,8 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <FVButton @click="handleClick">Click</FVButton>
-    <FVButton @click="handleCloseButtonClick">Close</FVButton>
+    <FVButton @click="handleCloseButtonClick"><template v-slot:left>x</template> Close</FVButton>
+    <FVIconButton :buttonIcon="saveIcon" @click="handleSaveClick">Save</FVIconButton>
   </div>
 </template>
 
@@ -14,7 +15,8 @@ export default {
   },
   data() {
     return {
-      theEvent: ""
+      theEvent: "",
+      saveIcon: "fas fa-save"
     }
   },
   methods: {
@@ -25,6 +27,11 @@ export default {
 
     handleCloseButtonClick(event) {
       console.log("close event: ", event.target.textContent);
+    },
+
+    handleSaveClick(event) {
+      console.log(event.target.textContent);
+      alert("SAVE");
     }
   }
 }
