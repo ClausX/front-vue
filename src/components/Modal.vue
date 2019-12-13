@@ -7,8 +7,8 @@
             <slot name="header">
               default header
             </slot>
-            <span @click="close">
-                <i class="modal-close-button fas fa-times-circle" />
+            <span class="modal-close-button button" @click="close">
+                <i class="fas fa-times-circle" />
             </span>
           </div>
 
@@ -77,6 +77,10 @@ export default {
 
     .modal-body {
         margin: 20px 0;
+    }
+
+    .modal-footer {
+      text-align: right;
     }
 
     .modal-enter {

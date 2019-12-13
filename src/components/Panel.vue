@@ -1,6 +1,6 @@
 <template>
     <div class="panel" :class="{collapsible: isCollapsible}">
-        <div class="panel-head">
+        <div class="panel-head head">
             <span class="panel-label"><slot name="head"/></span>
             <span v-if="isCollapsible" class="toggle-collapse" @click="handleClick">
                 <!-- TODO: Fix bug where click doesn't toggle icon, event though boolean variable in data is toggled. -->
@@ -42,11 +42,6 @@ export default {
         box-shadow: 2px 4px 4px black; 
         margin: 8px;
         .panel-head {
-            padding: 12px;
-            background: $primary;
-            text-align: left;
-            color: $light-text-color;
-
             .panel-label {
                 font-size: $large;
                 font-weight: bold;
