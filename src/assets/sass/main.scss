@@ -38,3 +38,16 @@ input[type= color] {
     width: 1.2rem;
     height: 1rem;
 }
+
+button {
+    .fas {
+        cursor: pointer;
+    }
+}
+
+.head {
+    padding: 12px;
+    background: $primary;
+    text-align: left;
+    color: $light-text-color;
+}
