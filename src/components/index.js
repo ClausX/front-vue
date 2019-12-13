@@ -2,11 +2,13 @@ import Vue from "vue";
 import FVButton from "./Button.vue";
 import FVIconButton from "./IconButton.vue";
 import FVPanel from "./Panel.vue";
+import FVInputGroup from "./InputGroup.vue";
 
 const Components = {
   FVButton,
   FVIconButton,
-  FVPanel
+  FVPanel,
+  FVInputGroup
 };
 
 Object.keys(Components).forEach(name => {
