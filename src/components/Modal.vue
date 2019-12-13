@@ -20,7 +20,6 @@
 
           <div class="modal-footer">
             <slot name="footer">
-              
               <FVButton class="modal-default-button" @click="close">
                 OK
               </FVbutton>

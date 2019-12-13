@@ -10,7 +10,6 @@
     @import 'src/assets/sass/main.scss';
 
     .btn {
-            
         border-radius:5px;
         border: none;
         outline:none;
@@ -30,5 +29,4 @@
             top:1px;
         }
     }
-
 </style>

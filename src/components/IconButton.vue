@@ -1,5 +1,12 @@
 <template>
-    <FVButton @click="$emit('click', $event)"><template v-slot:left><i :class="buttonIcon"/></template> <slot>btn</slot></FVButton>
+    <FVButton @click="$emit('click', $event)">
+        <template v-slot:left>
+            <i :class="buttonIcon"></i>
+        </template>
+        <slot>
+            btn
+        </slot>
+    </FVButton>
 </template>
 
 <script>

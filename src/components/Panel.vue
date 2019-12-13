@@ -1,18 +1,20 @@
 <template>
     <div class="panel" :class="{collapsible: isCollapsible}">
         <div class="panel-head head">
-            <span class="panel-label"><slot name="head"/></span>
+            <span class="panel-label">
+                <slot name="head"></slot>
+            </span>
             <span v-if="isCollapsible" class="toggle-collapse" @click="handleClick">
                 <!-- TODO: Fix bug where click doesn't toggle icon, event though boolean variable in data is toggled. -->
-                <i v-show="isCollapsed" class="fas fa-sort-up fa-2x"></i>
-                <i v-show="!isCollapsed" class="fas fa-sort-down fa-2x"></i>
+                <i v-show="!isCollapsed" class="fas fa-sort-up fa-2x"></i>
+                <i v-show="isCollapsed" class="fas fa-sort-down fa-2x"></i>
             </span>
         </div>
         <div class="panel-body">
-            <slot />
+            <slot></slot>
         </div>
         <div class="panel-foot">
-            <slot name="foot"/>
+            <slot name="foot"></slot>
         </div>
     </div>
 </template>
@@ -30,6 +32,7 @@ export default {
     },
     methods: {
         handleClick() {
+            // TODO: Change class and do animation
             this.isCollapsed = !this.isCollapsed;
         }
     }
@@ -65,5 +68,4 @@ export default {
             text-align: right;
         }
     }
-
 </style>

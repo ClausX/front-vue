@@ -1,5 +1,7 @@
 <template>
-  <span class="profile-picture" :style="{color: color, 'float':'right'}">
+  <span 
+    class="profile-picture" 
+    :style="{color: color, 'float':'right'}">
       <i class="fas fa-otter fa-4x"></i>
   </span>
 </template>

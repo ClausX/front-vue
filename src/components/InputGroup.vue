@@ -1,15 +1,9 @@
 <template>
-  <div>
-        <slot name="head"/>
-        <slot />
-  </div>
+    <div>
+        <slot name="head"></slot>
+        <slot></slot>
+    </div>
 </template>
-
-<script>
-export default {
-
-}
-</script>
 
 <style lang="scss" scoped>
     @import 'src/assets/sass/main.scss';
@@ -32,5 +26,4 @@ export default {
         float: right;
         width: 90%;
     }
-
 </style>
